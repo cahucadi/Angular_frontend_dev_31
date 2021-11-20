@@ -1,0 +1,53 @@
+
+
+<div class="col-lg-6 offset-sm-3">
+    <form (ngSubmit)="edit?updateStudent():createStudent()" #form="ngForm" class="form-horizontal"  >
+        
+        <fieldset>
+        
+        <!-- Form Name -->
+        <legend>{{edit?"Update Student":"Create Student"}}</legend>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-12 control-label" for="name">Student name</label>  
+          <div class="col-md-12">
+          <input id="name" name="name" type="text" [(ngModel)]="student.name"
+          placeholder="Student name" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-12 control-label" for="code">Student code</label>  
+          <div class="col-md-12">
+          <input id="code" name="code" type="text"  [(ngModel)]="student.code"
+          placeholder="Student code" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-12 control-label" for="photoURL">Student photo</label>  
+          <div class="col-md-12">
+          <input id="photoURL" name="photoURL" type="text"  [(ngModel)]="student.photoURL"
+          placeholder="Student photo" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label class="col-md-12 control-label" for="edit"></label>
+          <div class="col-md-12">
+            <button id="edit" name="edit" class="btn btn-info">Save</button>
+            <a id="cancel" name="cancel" class="btn btn-danger" [routerLink]="['/student/list']" routerLinkActive="router-link-active" >Cancel</a>
+          </div>
+        </div>
+        
+        </fieldset>
+        </form>
+        
+</div>

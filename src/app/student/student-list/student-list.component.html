@@ -1,0 +1,53 @@
+
+
+
+<div class="row">
+
+    <div class="col-4" *ngFor="let item of studentList" >
+                
+        <div class="card" style="width: 18rem;" >
+            <img class="card-img-top" src="{{item.photoURL}}" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text"> {{item.code}} - ID: {{item.id}} </p>
+            <a (click)="deleteStudent(item.id!)" class="btn btn-danger">Delete</a>
+            <a [routerLink]="['/student/edit/', item.id!]" routerLinkActive="router-link-active"  class="btn btn-info">Edit</a>
+
+            </div>
+        </div>
+    
+    </div>
+
+</div>
+
+
+
+<br/>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Code</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Created at  </th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of studentList">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.code}}</td>
+        <td>{{item.photoURL?"Yes":"No"}}</td>
+        <td>{{item.createdAt}}</td>
+        <td>  <a (click)="deleteStudent(item.id!)" class="btn btn-danger">Delete</a>
+          <a [routerLink]="['/student/edit/', item.id!]" routerLinkActive="router-link-active"  class="btn btn-info">Edit</a>
+
+        </td>
+      </tr>
+ 
+    </tbody>
+</table>
+
