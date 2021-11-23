@@ -18,9 +18,32 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/student/create']" routerLinkActive="active" >Create Student</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="active" > Dashboard </a>
+          </li>
+
         </ul>
         <span class="navbar-text d-none d-lg-block">
-          Welcome!
+         
+          <ul class="navbar-nav ml-auto">
+
+            <ng-container *ngIf="!authService.isLoggedIn(); else loggedIn" >
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active"  > Sign In</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active"  > Sign Up </a>
+              </li>
+            </ng-container>
+            <ng-template #loggedIn>
+              <li class="nav-item">
+                <a class="nav-link" (click)="authService.logout()" > Logout </a>
+              </li>
+            </ng-template>
+
+          </ul>
+
         </span>
       </div>
     </div>
