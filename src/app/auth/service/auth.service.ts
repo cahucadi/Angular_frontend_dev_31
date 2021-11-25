@@ -5,13 +5,14 @@ import { Observable } from 'rxjs';
 import { ILoginStatus } from '../login-status.interface';
 import { IRegistrationStatus } from '../registration-status.interface';
 import { IUser } from '../user.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  API_URL:string = 'http://localhost:3000';
+  API_URL:string = environment.apiURL;
 
   constructor(private readonly httpClient:HttpClient, private readonly router:Router) { }
 
