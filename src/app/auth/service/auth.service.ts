@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  API_URL:string = 'http://localhost:3000';
+  API_URL:string = environment.apiURL;
 
   constructor(private readonly httpClient:HttpClient, private readonly router:Router) { }
 
