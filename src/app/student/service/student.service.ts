@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class StudentService {
 
-  private API_URL:string = environment.apiURL;
+  API_URL:string = 'http://localhost:3000';
 
   constructor(private readonly httpClient: HttpClient) { }
 
